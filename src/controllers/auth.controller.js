@@ -1,13 +1,13 @@
 const userModel = require('../model/user.model')
 const bcrypt = require('bcryptjs')
-const jwt = requier('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
 
 //register user
 async function registerUserController(req,res){
   const {username, email, password} = req.body
 
-  if(!username || !email || password){
+  if(!username || !email || !password){
     return res.status(400).json({
       message: "Please provide Username, Email and Password"
     })
@@ -52,15 +52,15 @@ async function registerUserController(req,res){
 async function loginUserController(req,res){
   const {email, password} = req.body
 
-  const user = userModel.findOne({email})
+  const user = await userModel.findOne({email})
 
-  if(!email){
+  if(!user){
     return res.status(400).json({
       message:"Invalid email or password"
     })
   }
 
-  const isPasswordValid = bcrypt.compare(password,user.password)
+  const isPasswordValid = await bcrypt.compare(password,user.password)
 
   if(!isPasswordValid){
     return res.status(400).json({
@@ -68,7 +68,7 @@ async function loginUserController(req,res){
     })
   }
 
-  const token = jwt.token(
+  const token = jwt.sign(
     {id: user._id, username: user.username},
     process.env.JWT_SECRET,
     {expiresIn : "1d"}
