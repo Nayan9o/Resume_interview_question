@@ -16,5 +16,5 @@ authRoutes.post("/login",authController.loginUserController)
 authRoutes.get("/logout",authController.logoutUserController)
 
 //get me route
-authRoutes.get("/get-me",authMiddleware.authUser)
+authRoutes.get("/get-me",authMiddleware.authUser, authController.getMeController)
 module.exports = authRoutes
