@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken')
 const tokenBlacklistModel = require('../model/blacklist.model')
 
 
+
 //register user
 async function registerUserController(req,res){
   const {username, email, password} = req.body
