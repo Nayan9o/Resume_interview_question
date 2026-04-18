@@ -32,3 +32,15 @@ export async function  login ({email,password}){
     console.log(err)
   }
 }
+
+//logout api
+export async function logout(){
+  try{
+    const responce = await axios.get('http://localhost:3000/api/auth/logout',{
+      withCredentials:true
+    })
+    return responce.data
+  }catch(err){
+    console.log(err)
+  }
+}
