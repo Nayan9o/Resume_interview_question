@@ -7,9 +7,19 @@ export const useAuth = () => {
 
   const { user, setUser, loading, setLoading } = context;
 
+  //handleLogin
   const handleLogin = async ({ email, password }) => {
     setLoading(true);
     const data = await login({ email, password });
+
+    setUser(data.user);
+    setLoading(false);
+  };
+
+  //handleRegister
+  const handleRegister = async ({ username, email, password }) => {
+    setLoading(true);
+    const data = await register({ username, email, password });
 
     setUser(data.user);
     setLoading(false);
