@@ -10,9 +10,14 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    await handleRegister({username,email,password})
+    navigater('/')
   };
+  if(loading){
+    return (<main><h1>Loading.....</h1></main>)
+  }
   return (
     <main>
       <div className="form-contener">
