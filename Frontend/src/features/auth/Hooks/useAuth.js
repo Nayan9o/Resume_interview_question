@@ -10,15 +10,12 @@ export const useAuth = () => {
   //handleLogin
   const handleLogin = async ({ email, password }) => {
     setLoading(true);
-    try{
-
+    try {
       const data = await login({ email, password });
-      
+
       setUser(data.user);
-    }catch(err){
-
-    }finally{
-
+    } catch(err){
+    } finally {
       setLoading(false);
     }
   };
@@ -26,15 +23,12 @@ export const useAuth = () => {
   //handleRegister
   const handleRegister = async ({ username, email, password }) => {
     setLoading(true);
-    try{
-
+    try {
       const data = await register({ username, email, password });
-      
+
       setUser(data.user);
-    }catch(err){
-
-    }finally{
-
+    } catch (err) {
+    } finally {
       setLoading(false);
     }
   };
@@ -42,17 +36,14 @@ export const useAuth = () => {
   //handleLogout
   const handleLogout = async () => {
     setLoading(true);
-    try{
-
+    try {
       const data = await logout();
       setUser(null);
-    }catch(err){
-
-    }finally{
-
+    } catch (err) {
+    } finally {
       setLoading(false);
     }
   };
 
-  return {user, loading, handleRegister, handleLogin, handleLogout}
+  return { user, loading, handleRegister, handleLogin, handleLogout };
 };

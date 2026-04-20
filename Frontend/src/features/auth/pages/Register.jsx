@@ -1,9 +1,15 @@
-import React from "react";
-import './auth.from.scss'
-import { useNavigate,Link } from "react-router";
+import React, { useState } from "react";
+import "./auth.from.scss";
+import { useNavigate, Link } from "react-router";
+import { useAuth } from "../Hooks/useAuth";
 
 const Register = () => {
-  const navigater = useNavigate()
+  const { loading, handleRegister } = useAuth();
+  const navigater = useNavigate();
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -15,6 +21,9 @@ const Register = () => {
           <div className="input-group">
             <label htmlFor="username">Username</label>
             <input
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
               type="text"
               placeholder="Enter username"
               id="username"
@@ -24,6 +33,9 @@ const Register = () => {
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               type="email"
               placeholder="Enter email address"
               id="email"
@@ -33,6 +45,9 @@ const Register = () => {
           <div className="input-group">
             <label htmlFor="password">Password</label>
             <input
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               type="password"
               placeholder="Enter password "
               id="password"
@@ -41,7 +56,9 @@ const Register = () => {
           </div>
           <button className="button primary-button"> Register </button>
         </form>
-        <p>Already have an account ?  <Link to={"/login"}>Login</Link></p>
+        <p>
+          Already have an account ? <Link to={"/login"}>Login</Link>
+        </p>
       </div>
     </main>
   );
