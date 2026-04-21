@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
  * -Technical questins :
  * [{
  * quesiton:''&intention:' '  & answer: ''}]
- * -Behavioral questions: []
+ * -Behavioral questions: [same as technical question schema]
  * Skill gaps :  [{
  *          skills : "",
  *          severity : {
@@ -40,6 +40,21 @@ const technialQuestionSchema = new mongoose.Schema({
   })
 
 const behavioralQuesitonSchema = new mongoose.Schema({
+question:{
+    type:String,
+    required: [true, "Question is Required"]
+  },
+  intention:{
+    type: String,
+    required: [true, "Intention is required"]
+  },
+  answer:{
+    type: String,
+    required: [true, "Answer is required"]
+  }
+},{
+    _id:false
+    //not create seperate id for it   
   
 })
 
