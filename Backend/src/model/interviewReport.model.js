@@ -55,9 +55,22 @@ question:{
 },{
     _id:false
     //not create seperate id for it   
-  
 })
 
+
+const skillGapSchema = new mongoose.Schema({
+  skill:{
+    type: String,
+    required: [true, "Skill is required"]
+  },
+  severity:{
+    type: String,
+    enum:[low,medium,high],
+    required:[true, "Severity is required"]
+  }
+},{
+  _id:false
+})
 const interviewReportSchema = new mongoose.Schema({
   jobDiscription : {
     type: String,
