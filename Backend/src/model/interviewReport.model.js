@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
  * -Match score : number
  * -Technical questins :
  * [{
- * quesiton:''&interion:' '  & answer: ''}]
+ * quesiton:''&intention:' '  & answer: ''}]
  * -Behavioral questions: []
  * Skill gaps :  [{
  *          skills : "",
@@ -20,3 +20,43 @@ const mongoose = require('mongoose')
  *    tasks: [string]}]
  * 
  */
+
+const technialQuestionSchema = new mongoose.Schema({
+  question:{
+    type:String,
+    required: [true, "Question is Required"]
+  },
+  intention:{
+    type: String,
+    required: [true, "Intention is required"]
+  },
+  answer:{
+    type: String,
+    required: [true, "Answer is required"]
+  }
+},{
+    _id:false
+    //not create seperate id for it   
+  })
+
+const behavioralQuesitonSchema = new mongoose.Schema({
+  
+})
+
+const interviewReportSchema = new mongoose.Schema({
+  jobDiscription : {
+    type: String,
+    required: [true, "Job discription is required "]
+  },
+  resume: {
+    type: String
+  },
+  selfDiscription:{
+    type: true
+  },
+  matchScore:{
+    type: Number,
+    min: 0,
+    max: 100,
+  }
+})
