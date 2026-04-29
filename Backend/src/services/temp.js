@@ -50,3 +50,38 @@ Graduated: June 2025`
 
 const selfDiscription = `
 I am a results-driven MERN Stack Developer with a B.Tech in IT and hands-on experience in building full-stack applications. My expertise lies in bridging the gap between robust backend logic and intuitive frontend design. During my time at Athenura, I’ve specialized in creating automated tools that solve real-world efficiency problems. I am a lifelong learner—currently documented through my 100-Day MERN Challenge—and I thrive in collaborative environments where I can leverage my skills in React, Node.js, and Cloud Engineering to build scalable digital products.`
+
+const jobDiscription = `
+Role: Junior Full-Stack Developer (MERN)
+Location: Remote / Hybrid
+
+Type: Full-Time
+
+About the Role:
+We are looking for a Junior MERN Stack Developer to join our growing engineering team. You will be responsible for building the "server-side" of our web applications and integrating the "front-end" elements built by your coworkers.
+
+Responsibilities:
+
+Develop user-facing elements using React.js.
+
+Build reusable code and libraries for future use.
+
+Design and implement low-latency, high-availability, and performant applications.
+
+Implementation of security and data protection (JWT, OAuth).
+
+Integrate front-end components with Node.js backend logic.
+
+Requirements:
+
+Bachelor’s degree in Computer Science, IT, or a related field.
+
+Proficiency in JavaScript, including DOM manipulation and the JavaScript object model.
+
+Thorough understanding of React.js and its core principles (Hooks, Context API).
+
+Experience with Node.js and Express.
+
+Familiarity with MongoDB and NoSQL database design.
+
+Ability to work with CSS frameworks like Tailwind or Bootstrap.`
