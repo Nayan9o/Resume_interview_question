@@ -92,14 +92,19 @@ async function generateInterviewReport({
   selfDiscription,
   jobDiscription,
 }) {
+  const prompt = `Generate an interview for a candidate with following details:
+  Resume: ${resume}
+  Self Discription: ${selfDiscription}
+  JOb Discription: ${jobDiscription}`;
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: "",
+    contents: prompt,
     config: {
       responseMimeType: "application/json",
       responseJsonSchema: zodToJsonSchema(interviewReportSchema),
     },
   });
+  console.log(JSON.parse(response.text))
 }
 
-module.exports = invokeGeminiAi;
+module.exports =generateInterviewReport;
