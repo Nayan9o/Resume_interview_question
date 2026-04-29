@@ -1,5 +1,5 @@
-const { GoogleGenAI } = require("@google/genai");
-const { z } = require("zod");
+import { GoogleGenAI } from "@google/genai";
+import { z } from "zod";
 import { zodToJsonSchema } from "zod-to-json-schema";
 
 const ai = new GoogleGenAI({
@@ -104,7 +104,7 @@ async function generateInterviewReport({
       responseJsonSchema: zodToJsonSchema(interviewReportSchema),
     },
   });
-  console.log(JSON.parse(response.text))
+  console.log(JSON.parse(response.text));
 }
 
-module.exports =generateInterviewReport;
+export default generateInterviewReport;

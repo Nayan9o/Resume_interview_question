@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 /**
  * - job description schema
@@ -100,30 +100,36 @@ const preparationPlanSchema = new mongoose.Schema(
   { _id: false },
 );
 
-const interviewReportSchema = new mongoose.Schema({
-  jobDiscription: {
-    type: String,
-    required: [true, "Job discription is required "],
+const interviewReportSchema = new mongoose.Schema(
+  {
+    jobDiscription: {
+      type: String,
+      required: [true, "Job discription is required "],
+    },
+    resume: {
+      type: String,
+    },
+    selfDiscription: {
+      type: true,
+    },
+    matchScore: {
+      type: Number,
+      min: 0,
+      max: 100,
+    },
+    technialQuestion: [technialQuestionSchema],
+    behavioralQuesiton: [behavioralQuesitonSchema],
+    skillGap: [skillGapSchema],
+    preparationPlan: [preparationPlanSchema],
   },
-  resume: {
-    type: String,
+  {
+    timestamps: true,
   },
-  selfDiscription: {
-    type: true,
-  },
-  matchScore: {
-    type: Number,
-    min: 0,
-    max: 100,
-  },
-  technialQuestion:[technialQuestionSchema],
-  behavioralQuesiton:[behavioralQuesitonSchema],
-  skillGap:[skillGapSchema],
-  preparationPlan: [preparationPlanSchema]
-},{
-  timestamps: true
-});
+);
 
-const interviewReportModel = mongoose.model("interviewReport",interviewReportSchema)
+const interviewReportModel = mongoose.model(
+  "interviewReport",
+  interviewReportSchema,
+);
 
-module.exports = interviewReportModel
+export default interviewReportModel;

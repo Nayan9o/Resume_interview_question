@@ -1,13 +1,16 @@
-require('dotenv').config()
-const app = require('./src/app')
-const connectToDB = require('./src/config/db')
-const {resume, selfDiscription, jobDiscription } = require('./src/services/temp')
-const generateInterviewReport = require('./src/services/ai.service')
+import "dotenv/config";
+import app from "./src/app.js";
+import connectToDB from "./src/config/db.js";
+import {
+  resume,
+  selfDiscription,
+  jobDiscription,
+} from "./src/services/temp.js";
+import generateInterviewReport from "./src/services/ai.service.js";
 
+connectToDB();
+generateInterviewReport({ resume, selfDiscription, jobDiscription });
 
-connectToDB()
-generateInterviewReport({resume,selfDiscription,jobDiscription})
-
-app.listen(3000,()=>{
-  console.log("Server is running on port 3000")
-})
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});

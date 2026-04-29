@@ -86,4 +86,4 @@ Familiarity with MongoDB and NoSQL database design.
 
 Ability to work with CSS frameworks like Tailwind or Bootstrap.`;
 
-module.exports = { resume, selfDiscription, jobDiscription  };
+export { resume, selfDiscription, jobDiscription };
