@@ -46,10 +46,10 @@ Built a dashboard to track intern performance metrics and automatically generate
 Education
 B.Tech in Information Technology
 
-Graduated: June 2025`
+Graduated: June 2025`;
 
 const selfDiscription = `
-I am a results-driven MERN Stack Developer with a B.Tech in IT and hands-on experience in building full-stack applications. My expertise lies in bridging the gap between robust backend logic and intuitive frontend design. During my time at Athenura, I’ve specialized in creating automated tools that solve real-world efficiency problems. I am a lifelong learner—currently documented through my 100-Day MERN Challenge—and I thrive in collaborative environments where I can leverage my skills in React, Node.js, and Cloud Engineering to build scalable digital products.`
+I am a results-driven MERN Stack Developer with a B.Tech in IT and hands-on experience in building full-stack applications. My expertise lies in bridging the gap between robust backend logic and intuitive frontend design. During my time at Athenura, I’ve specialized in creating automated tools that solve real-world efficiency problems. I am a lifelong learner—currently documented through my 100-Day MERN Challenge—and I thrive in collaborative environments where I can leverage my skills in React, Node.js, and Cloud Engineering to build scalable digital products.`;
 
 const jobDiscription = `
 Role: Junior Full-Stack Developer (MERN)
@@ -84,4 +84,6 @@ Experience with Node.js and Express.
 
 Familiarity with MongoDB and NoSQL database design.
 
-Ability to work with CSS frameworks like Tailwind or Bootstrap.`
+Ability to work with CSS frameworks like Tailwind or Bootstrap.`;
+
+module.exports = { resume, selfDiscription, jobDiscription  };
